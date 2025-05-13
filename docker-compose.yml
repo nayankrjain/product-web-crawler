@@ -1,0 +1,32 @@
+services:
+  rabbitmq:
+    image: rabbitmq:3.7-management
+    container_name: crawler_rabbit
+    ports:
+      - "5672:5672"    # AMQP port
+      - "15672:15672"  # Management Web UI port
+    environment:
+      - RABBITMQ_DEFAULT_USER=admin
+      - RABBITMQ_DEFAULT_PASS=Crawler
+      - RABBITMQ_DEFAULT_VHOST=crawler
+
+  mongodb:
+    image: mongo:7.0
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: adminpassword
+    volumes:
+      - mongo-data:/data/db
+
+#  celery-worker:
+#    build:
+#      context: .
+#    depends_on:
+#      - rabbitmq
+#      - mongodb
+
+volumes:
+  mongo-data:

@@ -1,0 +1,51 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+env/
+*.env
+.Python
+pip-wheel-metadata/
+dist/
+build/
+*.egg-info/
+.eggs/
+*.log
+*.pot
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# JetBrains (e.g., PyCharm, IntelliJ)
+.idea/
+
+# VS Code
+.vscode/
+
+# Poetry
+.poetry/
+*.toml.lock
+
+# Pytest
+.cache/
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+
+# Celery
+celerybeat-schedule
+
+# Docker
+docker-compose.override.yml
